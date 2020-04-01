@@ -1,0 +1,10 @@
+Count the frequency of each word, and sort the words with a custom ordering relation that uses these frequencies. Then take the best k of them.
+
+Python
+
+class Solution(object):
+    def topKFrequent(self, words, k):
+        count = collections.Counter(words)
+        candidates = count.keys()
+        candidates.sort(key = lambda w: (-count[w], w))
+        return candidates[:k]
