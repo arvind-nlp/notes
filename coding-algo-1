@@ -1,0 +1,19 @@
+#First non repeating character in a string
+
+#https://www.youtube.com/watch?v=U7rxgP-fp8E
+
+string="ADBCGHIEFKJLADTVDERFSWVGHQWCNOPENSMSJWIERTFB"
+l = len(string)
+
+min_index = -1
+
+seen = set()
+for i in range(l):
+	#print(l-i-1) 
+	idx = l-i-1
+	c = string[idx]
+	if c not in seen:
+		min_index=(idx)
+	seen.add(c)
+
+print(string[min_index])
