@@ -1,0 +1,14 @@
+#https://www.youtube.com/watch?v=Qf5R-uYQRPk
+P="BATD"
+Q="ABACD"
+
+
+def lcs(x,y):
+	if(len(x)==0 or len(y)==0) :
+		return 0
+	if(x[-1]==y[-1]):
+		return 1+lcs(x[:-1],y[:-1])
+	else:
+		return max(lcs(x[:-1],y),lcs(x,y[:-1]))
+
+print(lcs(P,Q))
