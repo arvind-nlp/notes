@@ -1,0 +1,22 @@
+
+
+coins = [1,2,3]
+
+target = 5
+
+
+
+prev_row = [1]*(target+1) 
+	
+for coin in coins[1:]:
+	
+
+	row = prev_row.copy()
+	print(row)
+	for i in range(coin, target+1):
+			row[i] = prev_row[i] + row[i-coin]
+
+	prev_row=row
+
+
+print(row)
